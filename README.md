@@ -1,36 +1,208 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BDP Sells - Real Estate Website
+
+A professional real estate website built with Next.js 15, DaisyUI, and Tailwind CSS. Features a modern design with video hero section, property listings, and comprehensive real estate services.
+
+## Features
+
+- 🎥 **Video Hero Section** - Eye-catching background video for the homepage
+- 🏠 **Property Listings** - Comprehensive property search and display
+- 📱 **Responsive Design** - Mobile-first approach with DaisyUI components
+- 🔍 **Advanced Search** - Property filters and search functionality
+- 📧 **Contact Forms** - Multiple contact methods and inquiry forms
+- 🎨 **Modern UI** - Beautiful design using DaisyUI theme system
+- 📊 **SEO Optimized** - Meta tags, Open Graph, and structured data
+- 🚀 **Fast Performance** - Built with Next.js 15 and optimized for speed
+
+## Pages
+
+- **Home** - Video hero, featured properties, quick search
+- **Properties** - Property listings with advanced filters
+- **About** - Company information, team, and credentials
+- **Services** - Real estate services and pricing
+- **Contact** - Contact forms and office information
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS v4 + DaisyUI
+- **Icons**: React Icons
+- **Language**: TypeScript
+- **Deployment**: Ready for Vercel, Netlify, or any hosting platform
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd bdpsells
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── components/          # Shared components
+│   │   ├── Navigation.tsx  # Main navigation
+│   │   └── Footer.tsx      # Site footer
+│   ├── globals.css         # Global styles
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Homepage
+│   ├── properties/         # Properties page
+│   ├── about/              # About page
+│   ├── services/           # Services page
+│   └── contact/            # Contact page
+├── public/                 # Static assets
+└── package.json
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### DaisyUI Theme
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The website uses DaisyUI's "cupcake" theme by default. You can change this in `src/app/layout.tsx`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+<html lang="en" data-theme="cupcake">
+```
 
-## Deploy on Vercel
+Available themes: `light`, `dark`, `cupcake`, `bumblebee`, `emerald`, `corporate`, `synthwave`, `retro`, `cyberpunk`, `valentine`, `halloween`, `garden`, `forest`, `aqua`, `lofi`, `pastel`, `fantasy`, `wireframe`, `black`, `luxury`, `dracula`, `cmyk`, `autumn`, `business`, `acid`, `lemonade`, `night`, `coffee`, `winter`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Company Information
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Update the following files with your company details:
+
+- `src/app/layout.tsx` - Company name, description, and contact info
+- `src/app/components/Navigation.tsx` - Company name
+- `src/app/components/Footer.tsx` - Contact information
+- All page metadata and content
+
+### Video Hero
+
+Replace the video files in the `public/` folder:
+
+- `hero-video.mp4` - Main video file
+- `hero-video.webm` - WebM format for better compatibility
+- `hero-poster.jpg` - Video poster image
+
+### Property Images
+
+Add your property images to the `public/` folder:
+
+- `property-1.jpg`, `property-2.jpg`, etc.
+- `team-1.jpg`, `team-2.jpg`, etc. for team members
+- `about-image.jpg` for the about page
+
+## SEO Configuration
+
+The website includes comprehensive SEO features:
+
+- Meta tags for all pages
+- Open Graph and Twitter Card support
+- Structured data ready for implementation
+- Semantic HTML structure
+- Fast loading times
+
+Update the metadata in each page's `export const metadata` section with your specific information.
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically on push
+
+### Other Platforms
+
+The website is compatible with:
+
+- Netlify
+- AWS Amplify
+- DigitalOcean App Platform
+- Any static hosting service
+
+## Content Management
+
+### Properties
+
+Update the properties array in `src/app/properties/page.tsx` with your actual listings.
+
+### Team Members
+
+Modify the team array in `src/app/about/page.tsx` with your team information.
+
+### Services
+
+Customize the services in `src/app/services/page.tsx` to match your offerings.
+
+## Performance Optimization
+
+- Images are optimized for web
+- CSS is purged and minified
+- JavaScript is bundled and optimized
+- Lazy loading for better performance
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For support or questions:
+
+- Email: info@bdpsells.com
+- Phone: (555) 123-4567
+
+## Roadmap
+
+- [ ] Property detail pages
+- [ ] User authentication
+- [ ] Saved properties feature
+- [ ] Advanced search filters
+- [ ] Property alerts
+- [ ] Virtual tour integration
+- [ ] Mortgage calculator
+- [ ] Blog/news section
+
+---
+
+Built with ❤️ for the real estate industry
