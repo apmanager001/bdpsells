@@ -7,10 +7,8 @@ import {
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
-  FaLinkedin,
-  FaFacebook,
-  FaInstagram,
 } from "react-icons/fa";
+import Image from "next/image";
 import ContactMap from "../contact/comp/map";
 
 export const metadata = {
@@ -82,8 +80,8 @@ export default function AboutPage() {
               </p>
               <p className="text-lg mb-4">
                 We believe that buying or selling a home is one of the most
-                important decisions in life, and we're committed to making that
-                experience as smooth and successful as possible for every
+                important decisions in life, and we&apos;re committed to making
+                that experience as smooth and successful as possible for every
                 client.
               </p>
               <p className="text-lg mb-6">
@@ -96,8 +94,10 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="/about-image.jpg"
+                width={100}
+                height={100}
                 alt="BDP Sells Office"
                 className="rounded-lg shadow-xl w-full h-96 object-cover"
               />
@@ -132,7 +132,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Mission & Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing exceptional real estate services
+              We&apos;re committed to providing exceptional real estate services
               while maintaining the highest standards of integrity and
               professionalism.
             </p>
@@ -191,8 +191,10 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <div key={index} className="card bg-base-100 shadow-xl">
                 <figure className="h-64">
-                  <img
+                  <Image
                     src={member.image}
+                    width={100}
+                    height={100}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
@@ -318,8 +320,7 @@ export default function AboutPage() {
               </Link>
             </div>
 
-              
-              <ContactMap />
+            <ContactMap />
           </div>
         </div>
       </section>
@@ -329,8 +330,8 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
           <p className="text-xl mb-8">
-            Let's discuss your real estate needs and how we can help you achieve
-            your goals.
+            Let&apos;s discuss your real estate needs and how we can help you
+            achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn btn-secondary btn-lg">

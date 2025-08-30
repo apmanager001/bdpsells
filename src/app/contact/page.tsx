@@ -261,7 +261,8 @@ export default function ContactPage() {
                 </div>
                 <h3 className="card-title text-xl mb-2">Email Us</h3>
                 <p className="text-gray-600 mb-4">
-                  Send us a detailed message and we'll respond within 24 hours.
+                  Send us a detailed message and we&apos;ll respond within 24
+                  hours.
                 </p>
                 <a href="mailto:info@bdpsells.com" className="btn btn-primary">
                   info@bdpsells.com
@@ -314,8 +315,8 @@ export default function ContactPage() {
               <div className="collapse-content">
                 <p>
                   We typically respond to all inquiries within 2-4 hours during
-                  business hours. For urgent matters, we're available by phone
-                  24/7.
+                  business hours. For urgent matters, we&apos;re available by
+                  phone 24/7.
                 </p>
               </div>
             </div>
@@ -340,9 +341,9 @@ export default function ContactPage() {
               </div>
               <div className="collapse-content">
                 <p>
-                  For initial consultations, no documents are required. We'll
-                  discuss your needs and guide you on what documentation will be
-                  needed for specific services.
+                  For initial consultations, no documents are required.
+                  We&apos;ll discuss your needs and guide you on what
+                  documentation will be needed for specific services.
                 </p>
               </div>
             </div>
@@ -364,8 +365,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8">
-            Don't wait to start your real estate journey. Contact us today for a
-            free consultation.
+            Don&apos;t wait to start your real estate journey. Contact us today
+            for a free consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:2316271234" className="btn btn-secondary btn-lg">

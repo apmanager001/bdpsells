@@ -1,16 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import {
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaHome,
-  FaSearch,
-  FaUser,
-  FaInfoCircle,
-  FaNewspaper,
-} from "react-icons/fa";
+import Image from "next/image";
+import { FaPhone, FaHome, FaSearch, FaUser } from "react-icons/fa";
 
 export default function HomePage() {
   return (
@@ -19,7 +11,7 @@ export default function HomePage() {
       <section className="hero min-h-screen relative overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
-          {/* Fallback background in case video doesn't load */}
+          {/* Fallback background in case video doesn&apos;t load */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-80"></div>
 
           <video
@@ -148,8 +140,10 @@ export default function HomePage() {
             {/* Property Card 1 */}
             <div className="card bg-base-100 shadow-xl">
               <figure className="h-64">
-                <img
+                <Image
                   src="/home.jpg"
+                  width={100}
+                  height={100}
                   alt="Luxury Home"
                   className="w-full h-full object-cover"
                 />
@@ -172,8 +166,10 @@ export default function HomePage() {
             {/* Property Card 2 */}
             <div className="card bg-base-100 shadow-xl">
               <figure className="h-64">
-                <img
+                <Image
                   src="/home.jpg"
+                  width={100}
+                  height={100}
                   alt="Modern Condo"
                   className="w-full h-full object-cover"
                 />
@@ -196,8 +192,10 @@ export default function HomePage() {
             {/* Property Card 3 */}
             <div className="card bg-base-100 shadow-xl">
               <figure className="h-64">
-                <img
+                <Image
                   src="/home.jpg"
+                  width={100}
+                  height={100}
                   alt="Cozy Townhouse"
                   className="w-full h-full object-cover"
                 />
@@ -218,7 +216,10 @@ export default function HomePage() {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Link href="/properties" className="btn btn-primary btn-soft btn-lg">
+            <Link
+              href="/properties"
+              className="btn btn-primary btn-soft btn-lg"
+            >
               View All Properties
             </Link>
           </div>
@@ -271,8 +272,8 @@ export default function HomePage() {
             Ready to Find Your Dream Home?
           </h2>
           <p className="text-xl mb-8">
-            Let's start your real estate journey today. Contact us for a free
-            consultation.
+            Let&apos;s start your real estate journey today. Contact us for a
+            free consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn btn-secondary btn-soft btn-lg">

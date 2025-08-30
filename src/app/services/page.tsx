@@ -43,7 +43,7 @@ export default function ServicesPage() {
       icon: FaHandshake,
       title: "Home Selling",
       description:
-        "Maximize your home's value and sell quickly with our proven marketing strategies.",
+        "Maximize your home&apos;s value and sell quickly with our proven marketing strategies.",
       features: [
         "Property valuation and pricing",
         "Professional photography and staging",
@@ -310,7 +310,8 @@ export default function ServicesPage() {
                 <h3 className="card-title text-2xl mb-4">Buyer Services</h3>
                 <div className="text-3xl font-bold text-primary mb-4">FREE</div>
                 <p className="text-gray-600 mb-6">
-                  No upfront costs for buyers. We're compensated by the seller.
+                  No upfront costs for buyers. We&apos;re compensated by the
+                  seller.
                 </p>
                 <ul className="text-left space-y-2 mb-6">
                   <li className="flex items-center gap-2">
@@ -465,8 +466,8 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8">
-            Let's discuss your real estate needs and find the perfect service
-            package for you.
+            Let&apos;s discuss your real estate needs and find the perfect
+            service package for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn btn-secondary btn-lg">

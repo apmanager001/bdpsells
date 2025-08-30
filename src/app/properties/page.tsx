@@ -9,7 +9,7 @@ import {
   FaHeart,
   FaShare,
 } from "react-icons/fa";
-
+import Image from "next/image";
 export const metadata = {
   title: "Properties - BDP Sells Real Estate",
   description:
@@ -249,8 +249,10 @@ export default function PropertiesPage() {
                 className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300"
               >
                 <figure className="h-64 relative">
-                  <img
+                  <Image
                     src={property.image}
+                    width={100}
+                    height={100}
                     alt={property.title}
                     className="w-full h-full object-cover"
                   />
@@ -331,11 +333,11 @@ export default function PropertiesPage() {
       <div className="bg-base-200 py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Can't Find What You're Looking For?
+            Can&apos;t Find What You&apos;re Looking For?
           </h2>
           <p className="text-xl mb-8">
-            Let us know your specific requirements and we'll help you find the
-            perfect property.
+            Let us know your specific requirements and we&apos;ll help you find
+            the perfect property.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn btn-primary btn-lg">
