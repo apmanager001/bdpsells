@@ -29,7 +29,7 @@ export default function PropertiesPage() {
       sqft: "2,500",
       type: "Single Family",
       status: "For Sale",
-      image: "/property-1.jpg",
+      image: "/home.jpg",
       featured: true,
     },
     {
@@ -42,7 +42,7 @@ export default function PropertiesPage() {
       sqft: "1,200",
       type: "Condo",
       status: "For Sale",
-      image: "/property-2.jpg",
+      image: "/home.jpg",
       featured: false,
     },
     {
@@ -55,7 +55,7 @@ export default function PropertiesPage() {
       sqft: "1,800",
       type: "Townhouse",
       status: "For Sale",
-      image: "/property-3.jpg",
+      image: "/home.jpg",
       featured: false,
     },
     {
@@ -68,7 +68,7 @@ export default function PropertiesPage() {
       sqft: "2,200",
       type: "Single Family",
       status: "For Sale",
-      image: "/property-4.jpg",
+      image: "/home.jpg",
       featured: false,
     },
     {
@@ -81,7 +81,7 @@ export default function PropertiesPage() {
       sqft: "3,000",
       type: "Multi-Family",
       status: "For Sale",
-      image: "/property-5.jpg",
+      image: "/home.jpg",
       featured: false,
     },
     {
@@ -94,7 +94,7 @@ export default function PropertiesPage() {
       sqft: "4,200",
       type: "Single Family",
       status: "For Sale",
-      image: "/property-6.jpg",
+      image: "/home.jpg",
       featured: true,
     },
   ];

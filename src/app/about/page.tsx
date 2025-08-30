@@ -11,6 +11,7 @@ import {
   FaFacebook,
   FaInstagram,
 } from "react-icons/fa";
+import ContactMap from "../contact/comp/map";
 
 export const metadata = {
   title: "About Us - BDP Sells Real Estate",
@@ -317,9 +318,8 @@ export default function AboutPage() {
               </Link>
             </div>
 
-            <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
-              <p className="text-gray-600">Map Placeholder</p>
-            </div>
+              
+              <ContactMap />
           </div>
         </div>
       </section>
