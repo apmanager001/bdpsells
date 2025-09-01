@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useId } from "react";
 import {
   FaHome,
   FaMapMarkerAlt,
@@ -52,6 +52,7 @@ export default function AddHome() {
 
   const mainImageRef = useRef();
   const galleryImagesRef = useRef();
+  const baseId = useId();
 
   const propertyTypes = [
     "Single Family",
@@ -379,8 +380,8 @@ export default function AddHome() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="bg-white rounded-lg shadow-xl p-8">
+    <div className="max-w-4xl mx-auto md:p-6">
+      <div className="bg-white rounded-lg shadow-xl p-2 md:p-8">
         <div className="flex items-center gap-3 mb-8">
           <FaHome className="text-3xl text-primary" />
           <h2 className="text-3xl font-bold text-gray-900">Add New Property</h2>
@@ -407,20 +408,29 @@ export default function AddHome() {
 
               {/* Main Image Upload */}
               <div className="mb-6">
-                <label className="label">
+                <label htmlFor="mainImage" className="label">
                   <span className="label-text font-medium">
                     Main Property Image *
                   </span>
                 </label>
                 <div className="space-y-4">
                   <input
+                    id="mainImage"
                     ref={mainImageRef}
                     type="file"
                     accept="image/*"
                     onChange={handleMainImageUpload}
                     className="file-input file-input-bordered w-full"
                     disabled={uploadingImages}
+                    aria-describedby="mainImage-help"
                   />
+                  <div
+                    id="mainImage-help"
+                    className="text-sm text-gray-600 mt-1"
+                  >
+                    Upload the main property image (max 10MB, will be compressed
+                    automatically)
+                  </div>
 
                   {mainImagePreview && (
                     <div className="relative inline-block">
@@ -443,13 +453,14 @@ export default function AddHome() {
 
               {/* Gallery Images Upload */}
               <div>
-                <label className="label">
+                <label htmlFor="galleryImages" className="label">
                   <span className="label-text font-medium">
                     Additional Gallery Images
                   </span>
                 </label>
                 <div className="space-y-4">
                   <input
+                    id="galleryImages"
                     ref={galleryImagesRef}
                     type="file"
                     accept="image/*"
@@ -457,7 +468,15 @@ export default function AddHome() {
                     onChange={handleGalleryImagesUpload}
                     className="file-input file-input-bordered w-full"
                     disabled={uploadingImages}
+                    aria-describedby="galleryImages-help"
                   />
+                  <div
+                    id="galleryImages-help"
+                    className="text-sm text-gray-600 mt-1"
+                  >
+                    Upload additional property images (max 10MB each, will be
+                    compressed automatically)
+                  </div>
 
                   {galleryPreviews.length > 0 && (
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -500,12 +519,13 @@ export default function AddHome() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="title" className="label">
                     <span className="label-text font-medium">
                       Property Title *
                     </span>
                   </label>
                   <input
+                    id="title"
                     type="text"
                     name="title"
                     value={formData.title}
@@ -517,14 +537,15 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="price" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaDollarSign />
+                    </span>
                     <span className="label-text font-medium">Price *</span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaDollarSign />
-                    </span>
                     <input
+                      id="price"
                       type="number"
                       name="price"
                       value={formData.price}
@@ -532,17 +553,22 @@ export default function AddHome() {
                       className="input input-bordered flex-1"
                       placeholder="750000"
                       required
+                      aria-describedby="price-help"
                     />
+                  </div>
+                  <div id="price-help" className="text-sm text-gray-600 mt-1">
+                    Enter the property price in dollars (numbers only)
                   </div>
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="type" className="label">
                     <span className="label-text font-medium">
                       Property Type *
                     </span>
                   </label>
                   <select
+                    id="type"
                     name="type"
                     value={formData.type}
                     onChange={handleInputChange}
@@ -558,10 +584,11 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="status" className="label">
                     <span className="label-text font-medium">Status *</span>
                   </label>
                   <select
+                    id="status"
                     name="status"
                     value={formData.status}
                     onChange={handleInputChange}
@@ -586,14 +613,15 @@ export default function AddHome() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="beds" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaBed />
+                    </span>
                     <span className="label-text font-medium">Bedrooms *</span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaBed />
-                    </span>
                     <input
+                      id="beds"
                       type="number"
                       name="beds"
                       value={formData.beds}
@@ -607,14 +635,15 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="baths" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaBath />
+                    </span>
                     <span className="label-text font-medium">Bathrooms *</span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaBath />
-                    </span>
                     <input
+                      id="baths"
                       type="number"
                       name="baths"
                       value={formData.baths}
@@ -629,16 +658,17 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="sqft" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaRulerCombined />
+                    </span>
                     <span className="label-text font-medium">
                       Square Feet *
                     </span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaRulerCombined />
-                    </span>
                     <input
+                      id="sqft"
                       type="number"
                       name="sqft"
                       value={formData.sqft}
@@ -654,10 +684,11 @@ export default function AddHome() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="yearBuilt" className="label">
                     <span className="label-text font-medium">Year Built</span>
                   </label>
                   <input
+                    id="yearBuilt"
                     type="number"
                     name="yearBuilt"
                     value={formData.yearBuilt}
@@ -670,12 +701,13 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="lotSize" className="label">
                     <span className="label-text font-medium">
                       Lot Size (sqft)
                     </span>
                   </label>
                   <input
+                    id="lotSize"
                     type="number"
                     name="lotSize"
                     value={formData.lotSize}
@@ -687,12 +719,13 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="garageSpaces" className="label">
                     <span className="label-text font-medium">
                       Garage Spaces
                     </span>
                   </label>
                   <input
+                    id="garageSpaces"
                     type="number"
                     name="garageSpaces"
                     value={formData.garageSpaces}
@@ -704,16 +737,17 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="propertyTax" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaDollarSign />
+                    </span>
                     <span className="label-text font-medium">
                       Property Tax (annual)
                     </span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaDollarSign />
-                    </span>
                     <input
+                      id="propertyTax"
                       type="number"
                       name="propertyTax"
                       value={formData.propertyTax}
@@ -735,32 +769,35 @@ export default function AddHome() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="address" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaMapMarkerAlt />
+                    </span>
                     <span className="label-text font-medium">
                       Street Address *
                     </span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaMapMarkerAlt />
-                    </span>
                     <input
-                      type="text"
+                      id="address"
                       name="address"
+                      type="text"
                       value={formData.address}
                       onChange={handleInputChange}
                       className="input input-bordered flex-1"
                       placeholder="123 Main Street"
+                      autoComplete="off"
                       required
                     />
                   </div>
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="city" className="label">
                     <span className="label-text font-medium">City *</span>
                   </label>
                   <input
+                    id="city"
                     type="text"
                     name="city"
                     value={formData.city}
@@ -772,10 +809,11 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="state" className="label">
                     <span className="label-text font-medium">State *</span>
                   </label>
                   <input
+                    id="state"
                     type="text"
                     name="state"
                     value={formData.state}
@@ -787,10 +825,11 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="zipCode" className="label">
                     <span className="label-text font-medium">ZIP Code *</span>
                   </label>
                   <input
+                    id="zipCode"
                     type="text"
                     name="zipCode"
                     value={formData.zipCode}
@@ -810,12 +849,13 @@ export default function AddHome() {
               <h3 className="card-title text-xl mb-4">Description</h3>
 
               <div className="form-control">
-                <label className="label">
+                <label htmlFor="description" className="label">
                   <span className="label-text font-medium">
                     Property Description
                   </span>
                 </label>
                 <textarea
+                  id="description"
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
@@ -832,20 +872,25 @@ export default function AddHome() {
               <h3 className="card-title text-xl mb-4">Features & Amenities</h3>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {commonFeatures.map((feature) => (
-                  <label
-                    key={feature}
-                    className="label cursor-pointer justify-start gap-3 truncate"
-                  >
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-primary"
-                      checked={formData.features.includes(feature)}
-                      onChange={() => handleFeatureToggle(feature)}
-                    />
-                    <span className="label-text">{feature}</span>
-                  </label>
-                ))}
+                {commonFeatures.map((feature, index) => {
+                  const inputId = `${baseId}-${index}`;
+                  return (
+                    <label
+                      key={feature}
+                      htmlFor={inputId}
+                      className="label cursor-pointer justify-start gap-3 truncate"
+                    >
+                      <input
+                        id={inputId}
+                        type="checkbox"
+                        className="checkbox checkbox-primary"
+                        checked={formData.features.includes(feature)}
+                        onChange={() => handleFeatureToggle(feature)}
+                      />
+                      <span className="label-text">{feature}</span>
+                    </label>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -857,10 +902,11 @@ export default function AddHome() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="agentName" className="label">
                     <span className="label-text font-medium">Agent Name</span>
                   </label>
                   <input
+                    id="agentName"
                     type="text"
                     name="agentName"
                     value={formData.agentName}
@@ -871,12 +917,13 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="contactPhone" className="label">
                     <span className="label-text font-medium">
                       Contact Phone
                     </span>
                   </label>
                   <input
+                    id="contactPhone"
                     type="tel"
                     name="contactPhone"
                     value={formData.contactPhone}
@@ -887,18 +934,20 @@ export default function AddHome() {
                 </div>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="contactEmail" className="label">
                     <span className="label-text font-medium">
                       Contact Email
                     </span>
                   </label>
                   <input
+                    id="contactEmail"
                     type="email"
                     name="contactEmail"
                     value={formData.contactEmail}
                     onChange={handleInputChange}
                     className="input input-bordered"
                     placeholder="agent@example.com"
+                    autoComplete="off"
                   />
                 </div>
               </div>
@@ -911,8 +960,12 @@ export default function AddHome() {
               <h3 className="card-title text-xl mb-4">Additional Options</h3>
 
               <div className="space-y-4">
-                <label className="label cursor-pointer justify-start gap-3">
+                <label
+                  htmlFor="featured"
+                  className="label cursor-pointer justify-start gap-3"
+                >
                   <input
+                    id="featured"
                     type="checkbox"
                     name="featured"
                     checked={formData.featured}
@@ -925,16 +978,17 @@ export default function AddHome() {
                 </label>
 
                 <div className="form-control">
-                  <label className="label">
+                  <label htmlFor="hoaFees" className="label">
+                    <span className="bg-base-200 p-1 flex items-center rounded-2xl">
+                      <FaDollarSign />
+                    </span>
                     <span className="label-text font-medium">
                       HOA Fees (monthly)
                     </span>
                   </label>
                   <div className="input-group">
-                    <span className="bg-base-200 px-3 flex items-center">
-                      <FaDollarSign />
-                    </span>
                     <input
+                      id="hoaFees"
                       type="number"
                       name="hoaFees"
                       value={formData.hoaFees}
