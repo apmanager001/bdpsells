@@ -86,30 +86,30 @@ const HomeDashboard = () => {
           Welcome to the admin dashboard. You have successfully logged in.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          <div className="bg-blue-50 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold text-blue-900 mb-2">
+        <div className="flex flex-nowrap gap-2 sm:gap-4 md:gap-6 mb-8 overflow-x-auto">
+          <div className="bg-blue-50 p-3 sm:p-4 md:p-6 rounded-lg flex-shrink-0 min-w-0 flex-1 flex flex-col text-center items-center justify-center">
+            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-blue-900 mb-1 sm:mb-2">
               Total Properties
             </h3>
-            <p className="text-3xl font-bold text-blue-700">
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700">
               {properties.length}
             </p>
           </div>
 
-          <div className="bg-green-50 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold text-green-900 mb-2">
+          <div className="bg-green-50 p-3 sm:p-4 md:p-6 rounded-lg flex-shrink-0 min-w-0 flex-1 flex flex-col text-center items-center justify-center">
+            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-green-900 mb-1 sm:mb-2">
               For Sale
             </h3>
-            <p className="text-3xl font-bold text-green-700">
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-700">
               {properties.filter((p) => p.status === "For Sale").length}
             </p>
           </div>
 
-          <div className="bg-purple-50 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold text-purple-900 mb-2">
+          <div className="bg-purple-50 p-3 sm:p-4 md:p-6 rounded-lg flex-shrink-0 min-w-0 flex-1 flex flex-col text-center items-center justify-center">
+            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-purple-900 mb-1 sm:mb-2">
               For Rent
             </h3>
-            <p className="text-3xl font-bold text-purple-700">
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-700">
               {properties.filter((p) => p.status === "For Rent").length}
             </p>
           </div>

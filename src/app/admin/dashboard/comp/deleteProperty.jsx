@@ -57,7 +57,7 @@ const DeleteProperty = ({ property, onDelete }) => {
         className="btn btn-circle btn-sm btn-ghost bg-white/80 hover:bg-white"
         onClick={() => setIsModalOpen(true)}
       >
-        <FaTrash className="text-red-500" />
+        <FaTrash size={18} className="text-red-500" />
       </button>
 
       {/* Modal */}

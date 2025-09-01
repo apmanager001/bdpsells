@@ -149,7 +149,7 @@ const EditProperty = ({ property, onUpdate }) => {
         className="btn btn-circle btn-sm btn-ghost bg-white/80 hover:bg-white"
         onClick={() => setIsModalOpen(true)}
       >
-        <FaEdit />
+        <FaEdit size={18} />
       </button>
 
       {/* Modal */}
