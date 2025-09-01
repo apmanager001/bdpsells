@@ -1,8 +1,10 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { FaPhone, FaHome, FaSearch, FaUser } from "react-icons/fa";
+import PropertyCard from "./properties/comp/propertyCard";
 
 export default function HomePage() {
   return (
@@ -138,82 +140,55 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Property Card 1 */}
-            <div className="card bg-base-100 shadow-xl">
-              <figure className="h-64">
-                <Image
-                  src="/home.jpg"
-                  width={100}
-                  height={100}
-                  alt="Luxury Home"
-                  className="w-full h-full object-cover"
-                />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title">Luxury Family Home</h3>
-                <p className="text-2xl font-bold text-primary">$750,000</p>
-                <p className="text-sm text-gray-600">
-                  4 bed • 3 bath • 2,500 sqft
-                </p>
-                <p className="text-sm text-gray-600">
-                  123 Main Street, City, State
-                </p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
+            <PropertyCard
+              property={{
+                id: "1",
+                title: "Luxury Family Home",
+                price: "$750,000",
+                beds: 4,
+                baths: 3,
+                sqft: "2,500",
+                location: "123 Main Street, City, State",
+                type: "Single Family",
+                status: "For Sale",
+                image: "/home.jpg",
+              }}
+              showActions={false}
+            />
 
             {/* Property Card 2 */}
-            <div className="card bg-base-100 shadow-xl">
-              <figure className="h-64">
-                <Image
-                  src="/home.jpg"
-                  width={100}
-                  height={100}
-                  alt="Modern Condo"
-                  className="w-full h-full object-cover"
-                />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title">Modern Downtown Condo</h3>
-                <p className="text-2xl font-bold text-primary">$450,000</p>
-                <p className="text-sm text-gray-600">
-                  2 bed • 2 bath • 1,200 sqft
-                </p>
-                <p className="text-sm text-gray-600">
-                  456 Oak Avenue, City, State
-                </p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
+            <PropertyCard
+              property={{
+                id: "2",
+                title: "Modern Downtown Condo",
+                price: "$450,000",
+                beds: 2,
+                baths: 2,
+                sqft: "1,200",
+                location: "456 Oak Avenue, City, State",
+                type: "Condo",
+                status: "For Sale",
+                image: "/home.jpg",
+              }}
+              showActions={false}
+            />
 
             {/* Property Card 3 */}
-            <div className="card bg-base-100 shadow-xl">
-              <figure className="h-64">
-                <Image
-                  src="/home.jpg"
-                  width={100}
-                  height={100}
-                  alt="Cozy Townhouse"
-                  className="w-full h-full object-cover"
-                />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title">Cozy Townhouse</h3>
-                <p className="text-2xl font-bold text-primary">$325,000</p>
-                <p className="text-sm text-gray-600">
-                  3 bed • 2.5 bath • 1,800 sqft
-                </p>
-                <p className="text-sm text-gray-600">
-                  789 Pine Street, City, State
-                </p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
+            <PropertyCard
+              property={{
+                id: "3",
+                title: "Cozy Townhouse",
+                price: "$325,000",
+                beds: 3,
+                baths: 2.5,
+                sqft: "1,800",
+                location: "789 Pine Street, City, State",
+                type: "Townhouse",
+                status: "For Sale",
+                image: "/home.jpg",
+              }}
+              showActions={false}
+            />
           </div>
           <div className="text-center mt-8">
             <Link

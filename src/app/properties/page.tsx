@@ -2,14 +2,8 @@ import Link from "next/link";
 import {
   FaSearch,
   FaFilter,
-  FaMapMarkerAlt,
-  FaBed,
-  FaBath,
-  FaRulerCombined,
-  FaHeart,
-  FaShare,
 } from "react-icons/fa";
-import Image from "next/image";
+import PropertyCard from "./comp/propertyCard";
 export const metadata = {
   title: "Properties - BDP Sells Real Estate",
   description:
@@ -244,75 +238,7 @@ export default function PropertiesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
-              <div
-                key={property.id}
-                className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300"
-              >
-                <figure className="h-64 relative">
-                  <Image
-                    src={property.image}
-                    width={100}
-                    height={100}
-                    alt={property.title}
-                    className="w-full h-full object-cover"
-                  />
-                  {property.featured && (
-                    <div className="badge badge-primary absolute top-4 left-4">
-                      Featured
-                    </div>
-                  )}
-                  <div className="absolute top-4 right-4 flex gap-2">
-                    <button className="btn btn-circle btn-sm btn-ghost bg-white/80 hover:bg-white">
-                      <FaHeart className="text-red-500" />
-                    </button>
-                    <button className="btn btn-circle btn-sm btn-ghost bg-white/80 hover:bg-white">
-                      <FaShare />
-                    </button>
-                  </div>
-                </figure>
-                <div className="card-body">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="card-title text-lg">{property.title}</h3>
-                    <span className="text-2xl font-bold text-primary">
-                      {property.price}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
-                    <FaMapMarkerAlt />
-                    <span>{property.location}</span>
-                  </div>
-
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                    <div className="flex items-center gap-1">
-                      <FaBed />
-                      <span>{property.beds} beds</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <FaBath />
-                      <span>{property.baths} baths</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <FaRulerCombined />
-                      <span>{property.sqft} sqft</span>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="badge badge-outline">{property.type}</span>
-                    <span className="badge badge-success">
-                      {property.status}
-                    </span>
-                  </div>
-
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">View Details</button>
-                    <button className="btn btn-outline">
-                      Schedule Viewing
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <PropertyCard key={property.id} property={property} />
             ))}
           </div>
 
