@@ -13,8 +13,8 @@ const PropertyCard = ({
   property,
   showActions = true,
   admin = false,
-  onUpdate,
-  onDelete,
+  onUpdate = null,
+  onDelete = null,
 }) => {
   return (
     <div
